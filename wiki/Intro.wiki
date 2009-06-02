@@ -1,6 +1,6 @@
 #summary One-sentence summary of this page.
 
-<h1>CbModel Library</h1>
+=CbModel Library=
 Java background-subtraction library for <a href="http://processing.org/">Processing</a>
 
 
