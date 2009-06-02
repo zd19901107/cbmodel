@@ -10,4 +10,4 @@
 
 ==Reference and Examples==
 You can find reference of library's functions <a href="">here</a>.<br/>
-Also, You can find some examples <a href="">here</a>.
+Also, you can find some examples <a href="">here</a>.
