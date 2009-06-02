@@ -1,5 +1,4 @@
-=*CbModel Library*=
-Java background-subtraction library for <a href="http://processing.org/">Processing</a>
+^<h1>CbModel Library</h1>^Java background-subtraction library for <a href="http://processing.org/">Processing</a>
 
 
 
