@@ -11,7 +11,7 @@ CbModel is released under the GNU <a href="http://www.gnu.org/licenses/gpl.html"
 
 
 == Getting Started ==
-Follow documentations to start usign CbModel library.
+Follow <a href="">documentations</a> to start usign CbModel library.
 
 
 === Credits ===
