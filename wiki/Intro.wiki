@@ -8,4 +8,8 @@ CbModel library works on Windows, Mac OS X and Linux.<br>
 CbModel is released under the GNU <a href="http://www.gnu.org/licenses/gpl.html">GPLv3</a> license.
 
 
+== Getting Started ==
+Follow starting instructions for usign CbModel library, or read documentations.
+
+
 === Credits ===
