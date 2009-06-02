@@ -9,5 +9,5 @@
   </ol> 
 
 ==Reference and Examples==
-You can find reference of library's functions <a href="">here</a>.
+You can find reference of library's functions <a href="">here</a>.<br/>
 Also, You can find some examples <a href="">here</a>.
