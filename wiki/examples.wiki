@@ -1,3 +1,68 @@
 #summary One-sentence summary of this page.
 
 = Examples =
+
+===Basic Usage===
+import it.ppm.codebookmodel.*;
+import codeanticode.gsvideo.*;
+import java.util.*;
+
+GSMovie myMovie;
+CbModel Modello;
+int frameDisplayed;
+
+void setup(){
+size(850, 350, P2D);
+background(0);
+frameDisplayed = 0;
+
+Modello = new CbModel(this, 384, 288);
+myMovie = new GSMovie(this, "walk1.mpg");
+frameRate(25);
+myMovie.loop();
+}
+
+void draw(){
+
+     if(frameDisplayed <= 50)
+     {
+           if(myMovie.available())
+           {
+                 myMovie.read();
+                 image(myMovie, 10, 50);
+                 try{
+                 Modello.updateModel(myMovie);
+                 }
+                 catch(LearningStateException Err){
+                 println("Errore dello stato...");
+                 }
+                 catch(WrongSizeException Err){
+                 println("Dimensione immagine non coerente...");
+                 }
+                 frameDisplayed ++;
+           }
+     }
+
+     else{
+           Modello.passTestState();
+           if( Modello.isTestState() )
+           {
+                 if(myMovie.available())
+                 {
+                       myMovie.read();
+                       image(myMovie, 10, 50);
+                       try{
+                       image(Modello.getDifferenceImage(myMovie), 456, 50);
+                       }
+                       catch(WrongSizeException Err){
+                       println("Dimension");
+                       }
+                       catch(LearningStateException Err){
+                       println("Learn");
+                       }
+                       frameDisplayed ++;
+                 }
+           }
+    }
+
+} 
