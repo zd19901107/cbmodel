@@ -3,7 +3,7 @@
 ==Installation==
 
   <ol>
-  <li>Unzip the CbModel zip and move the extracted directory in the libraries directory of processing.</li><br/>  
+  <li>Unzip the CbModel zip and move the extracted directory in the _libraries_ directory of processing.</li><br/>  
   <li>Import the library to any of your programs that use the CbModel library:
   Sketch -> Import Library and select CbModel.</li>  
   </ol> 
