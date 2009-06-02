@@ -3,66 +3,76 @@
 = Examples =
 
 ===Basic Usage===
-import it.ppm.codebookmodel.*;
-import codeanticode.gsvideo.*;
-import java.util.*;
 
-GSMovie myMovie;
-CbModel Modello;
-int frameDisplayed;
+  <p>import it.ppm.codebookmodel.*;<br/>import codeanticode.gsvideo.*;<br/>import java.util.*;
+     <br/><br/>
+    GSMovie myMovie;<br/>CbModel	Modello;<br/>int frameDisplayed;
+    <br/><br/>
+    void setup(){<br/>
+    size(850, 350, P2D);<br/>
+    background(0);<br/>
+    frameDisplayed = 0;<br/><br/>
+  
+    Modello = new CbModel(this, 384, 288);<br/>
+    myMovie = new GSMovie(this, "walk1.mpg");<br/>
+    frameRate(25); <br/>
+    myMovie.loop();<br/>
+    }<br/><br/>
 
-void setup(){
-size(850, 350, P2D);
-background(0);
-frameDisplayed = 0;
-
-Modello = new CbModel(this, 384, 288);
-myMovie = new GSMovie(this, "walk1.mpg");
-frameRate(25);
-myMovie.loop();
-}
-
-void draw(){
-
-     if(frameDisplayed <= 50)
-     {
-           if(myMovie.available())
-           {
-                 myMovie.read();
-                 image(myMovie, 10, 50);
-                 try{
-                 Modello.updateModel(myMovie);
-                 }
-                 catch(LearningStateException Err){
-                 println("Errore dello stato...");
-                 }
-                 catch(WrongSizeException Err){
-                 println("Dimensione immagine non coerente...");
-                 }
-                 frameDisplayed ++;
-           }
-     }
-
-     else{
-           Modello.passTestState();
-           if( Modello.isTestState() )
-           {
-                 if(myMovie.available())
-                 {
-                       myMovie.read();
-                       image(myMovie, 10, 50);
-                       try{
-                       image(Modello.getDifferenceImage(myMovie), 456, 50);
-                       }
-                       catch(WrongSizeException Err){
-                       println("Dimension");
-                       }
-                       catch(LearningStateException Err){
-                       println("Learn");
-                       }
-                       frameDisplayed ++;
-                 }
-           }
+    void draw(){<br/> 
+    <ul class="senza_punto">     
+      <li>if(frameDisplayed <= 50)</li> 
+      <li>{                       </li>     
+         <ul class="senza_punto"> 
+            <li>if(myMovie.available())</li> 
+            <li> {                     </li>
+            <ul class="senza_punto"> 
+                <li>myMovie.read();                                 </li>
+                <li>image(myMovie, 10, 50);                         </li>
+                <li>try{                                            </li>
+	             <li>Modello.updateModel(myMovie);                   </li>
+	             <li>}                                               </li>
+                <li>catch(LearningStateException Err){              </li>
+                <li>println("Errore dello stato...");               </li>
+                <li>}                                               </li>
+                <li>catch(WrongSizeException Err){                  </li>
+	             <li>println("Dimensione immagine non coerente..."); </li>
+                <li>}                                               </li>
+                <li>frameDisplayed ++;                              </li>
+            </ul>
+         <li>}</li>
+         </ul>
+     <li>}</li>      
+     </ul>
+          
+     <ul class="senza_punto">   
+        <li>else{  </li>
+        <ul class="senza_punto">
+           <li>Modello.passTestState();</li>
+           <li>if( Modello.isTestState() )</li>
+           <li>{</li>
+           <ul class="senza_punto">
+               <li>if(myMovie.available())</li>
+               <li>{</li>
+               <ul class="senza_punto">
+                  <li>myMovie.read(); </li>
+                  <li>image(myMovie, 10, 50);</li>      
+                  <li>try{</li>
+	               <li>image(Modello.getDifferenceImage(myMovie), 456, 50);</li>
+                  <li>}</li>
+                  <li>catch(WrongSizeException Err){</li>
+                  <li>println("Dimension");</li>
+                  <li>}</li>
+                  <li>catch(LearningStateException Err){</li>
+                  <li>println("Learn");</li>
+                  <li>}</li>
+                  <li>frameDisplayed ++;</li>
+                  </ul>
+                                 <li>}</li>
+               </ul>
+            <li>}</li>
+            </ul>
+          <li>}</li>             
+       </ul>
     }
-
-} 
+</p>
