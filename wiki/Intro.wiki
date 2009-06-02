@@ -1,9 +1,9 @@
 #summary One-sentence summary of this page.
 
-= Introduction =
+= CbModel Library =
+=== Java background-subtraction library for Processing ===
 
-<h1> ciao </h1>
-<a href="http://www.realizzazioneweb.com">real</a>
+
 
 
 = Details =
