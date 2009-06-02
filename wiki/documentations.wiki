@@ -7,6 +7,7 @@
   <li>Import the library to any of your programs that use the CbModel library:
   Sketch -> Import Library and select CbModel.</li>  
   </ol> 
+<br/>
 
 ==Reference and Examples==
 You can find reference of library's functions <a href="">here</a>.<br/>
