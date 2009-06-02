@@ -1,6 +1,7 @@
 #summary One-sentence summary of this page.
 
-=CbModel Library= Java background-subtraction library for Processing
+=CbModel Library= 
+Java background-subtraction library for Processing
 
 
 
