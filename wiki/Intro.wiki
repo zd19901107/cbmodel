@@ -4,8 +4,8 @@ Java background-subtraction library for <a href="http://processing.org/">Process
 
 == Details ==
 
-CbModel library works on Windows, Mac OS X and Linux.
-CbModel is released under the GPLv2 license.
+CbModel library works on Windows, Mac OS X and Linux.<br>
+CbModel is released under the GNU <a href="http://www.gnu.org/licenses/gpl.html">GPLv3</a> license.
 
 
 === Credits ===
