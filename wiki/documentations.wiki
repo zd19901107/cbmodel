@@ -1,9 +1,13 @@
 = Documentations =
 
-==Installation for Processing==
+==Installation==
 
   <ol>
   <li>Unzip the CbModel zip and move the extracted directory in the libraries directory of processing.</li><br/>  
   <li>Import the library to any of your programs that use the CbModel library:
   Sketch -> Import Library and select CbModel.</li>  
   </ol> 
+
+==Reference and Examples==
+You can find reference of library's functions <a href="">here</a>.
+Also, You can find some examples <a href="">here</a>.
