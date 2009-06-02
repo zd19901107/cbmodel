@@ -4,7 +4,8 @@ Java background-subtraction library for <a href="http://processing.org/">Process
 
 == Details ==
 
-Add your content here.  Format your content with:
-  * Text in *bold* or _italic_
-  * Headings, paragraphs, and lists
-  * Automatic links to other wiki pages
+CbModel library works on Windows, Mac OS X and Linux.
+CbModel is released under the GPLv2 license.
+
+
+=== Credits ===
