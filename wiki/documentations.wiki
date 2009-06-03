@@ -2,7 +2,6 @@
 
 <ol>
 <li>Unzip the CbModel zip and move the extracted directory in the _libraries_ directory           of Processing.</li><br/>  
-<li>Restart Processing.</li><br/>
 <li>Import the library to any of your programs that use the CbModel library:
 Sketch -> Import Library and select CbModel.</li>  
 </ol> 
