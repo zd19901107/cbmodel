@@ -1,4 +1,3 @@
-
 ==Installation==
 
 <ol>
@@ -10,5 +9,5 @@ Sketch -> Import Library and select CbModel.</li>
 <br/>
 
 ==Reference and Examples==
-You can find reference of library's functions <a href="">here</a>.<br/>
+You can find reference of library's functions <a href="http://code.google.com/p/cbmodel/wiki/package-summary.html">here</a>.<br/>
 Also, you can find some examples <a href="http://code.google.com/p/cbmodel/wiki/examples">here</a>.
