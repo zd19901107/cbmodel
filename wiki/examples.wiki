@@ -67,8 +67,16 @@ void draw(){
 } 
 
 }}}
-
+ 
 ===Advanced Usage===
+
+In this example yuo can change some parameters, such as:
+ alpha - brightness'parameter ,between 0.2-0.7 .
+ beta - brightness'parameter,tipically between 1.1-1.8 .
+ epsilon_1 - max tollerance of brightenns's deviation and the color of a pixel(in order  too recognise a pixel from another) phase's "Learning".
+ epsilon_2 - max tollerance of brightenns's deviation and the color of a pixel(in order too recognise a pixel from another) phase's "Testing".
+ percent_tm - temporal threshold's parameter,tipically is 0.7.
+
 {{{
 
 import it.ppm.codebookmodel.*;
