@@ -1,9 +1,7 @@
 #summary Installing the library CbModel
 = Installing CbModel library =
 
-CbModel is simple to install, especially for developers who are already familiar with Processing 
-
-
+CbModel is simple to install, especially for developers who are already familiar with <a href="http://processing.org/">Processing</a>
 = Details =
 
 Add your content here.  Format your content with:
