@@ -4,4 +4,4 @@
 CbModel is simple to install, especially for developers who are already familiar with <a href="http://processing.org/">Processing</a>
 
 == Library ==
-You can obtain CBModel library from the a href="http://code.google.com/p/cbmodel/downloads/list">Downloads Page</a>. 
+You can obtain CBModel library from the <a href="http://code.google.com/p/cbmodel/downloads/list">Downloads Page</a>. 
