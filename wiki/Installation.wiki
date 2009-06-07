@@ -2,7 +2,7 @@
 = Installing CbModel library =
 
 CbModel is simple to install, especially for developers who are already familiar with <a href="http://processing.org/">Processing</a>
-= Details =
+= *Details* =
 
 Add your content here.  Format your content with:
   * Text in *bold* or _italic_
