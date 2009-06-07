@@ -1,7 +1,7 @@
 #summary Installing the library CbModel
-= Introduction =
+= Installing CbModel library =
 
-Add your content here.
+CbModel is simple to install, especially for developers who are already familiar with Processing 
 
 
 = Details =
