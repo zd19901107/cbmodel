@@ -2,9 +2,6 @@
 = Installing CbModel library =
 
 CbModel is simple to install, especially for developers who are already familiar with <a href="http://processing.org/">Processing</a>
-= Details =
 
-Add your content here.  Format your content with:
-  * Text in *bold* or _italic_
-  * Headings, paragraphs, and lists
-  * Automatic links to other wiki pages
+== Library ==
+You can obtain CBModel library from the Downloads Page. 
