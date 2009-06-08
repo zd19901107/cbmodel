@@ -178,14 +178,14 @@ public class CbModel extends Thread{
 		float[] xt=new float[3];
 		float brightness_xt;
 		
-		xt[0]=myParent.red(color);		//red
-		xt[1]=myParent.green(color);	//green
-    	xt[2]=myParent.blue(color);		//blue
+		xt[0]=myParent.red(color);		
+		xt[1]=myParent.green(color);	
+    	xt[2]=myParent.blue(color);		
 		
     	brightness_xt=xt[0]+xt[1]+xt[2];
 		
 		if(matchPixel(cord_x, cord_y, xt, brightness_xt,1)>=0 )
-			return true;	//(x,y) appartiene al Background
+			return true;	
 		else
 			return false;
 		
