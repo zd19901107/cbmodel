@@ -7,7 +7,7 @@ This sketch uses the library CbModel for *local video*, it allows you to view th
 App_Codebook  is a sketch  for <a href="http://processing.org/">Processing</a>,use the <a href="http://users.design.ucla.edu/~acolubri/processing/gsvideo/home/advanced.html">GSMovie</a> library to extract frames from video
 
 == How to use ==
-Launched Sketch, is a fairly intuitive form, the lower are the *InputBox* to set the parameters:<br>
+Launched Sketch, is a fairly intuitive form, the lower are the *inputBox* to set the parameters:<br>
 (if not included are set by default)
     * alpha - brightness'parameter ,between 0.2-0.7 ( 
     * beta - brightness'parameter,tipically between 1.1-1.8 
