@@ -1,5 +1,3 @@
 #summary Documentation and Technical details.
 
-= Introduction =
-<br><br>
-Page under development...
+=*Page under development...*=
