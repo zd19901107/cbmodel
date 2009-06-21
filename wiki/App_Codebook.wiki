@@ -1,11 +1,7 @@
 #summary use the CbModel library for the local videos .
 
 = Overview =
-This program uses the library CbModel for *local video*, it allows you to view the video test and the results obtained from CbModel on the video test. This application also allows you to set the parameters for the library at *run-time*
+This sketch uses the library CbModel for *local video*, it allows you to view the video test and the results obtained from CbModel on the video test. This application also allows you to set the parameters for the library at *run-time*
 
-= Details =
-
-Add your content here.  Format your content with:
-  * Text in *bold* or _italic_
-  * Headings, paragraphs, and lists
-  * Automatic links to other wiki pages
+== What I need to run App_Codebook program? ==
+App_Codebook  is a sketch for <a href="http://processing.org/">Processing</a>,use the Gsmovie library 	
