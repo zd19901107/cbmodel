@@ -14,9 +14,9 @@ Launched Sketch, is a fairly intuitive form, the lower are the *inputBox* to set
     * percent_tm - temporal threshold's parameter,tipically is 0.7
     * epsilon_1 - max tollerance of brightenns's deviation and the color of a pixel(in    order too recognise a pixel from another) phase's "Learning"
     * frames - number of frames to create the model
-    * epsilon_2 - max tollerance of brightenns's deviation and the color of a pixel(in order too recognise a pixel from another) phase's "Testing"(you can change at runtime)
+    * epsilon_2 - max tollerance of brightenns's deviation and the color of a pixel(in order too recognise a pixel from another) phase's "Testing"(you can *change at runtime*)
 (mandatory parameter)
-    * video - name of the local video  (*the video must be in the subfolder "video" in the sketch*)
+    * video - name of the local video  (the video *must be in the subfolder "video"* in the sketch)
   
 After the initialization parameters necessary fields to the library just click on run (green arrow).<br>
 	
