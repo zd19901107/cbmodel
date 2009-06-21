@@ -1,9 +1,7 @@
-#summary One-sentence summary of this page.
+#summary use the CbModel library for the local videos .
 
-= Introduction =
-
-Add your content here.
-
+= Overview =
+This program uses the library CbModel for local video, it allows you to view the video test and the results obtained from CbModel on the video test. This application also allows you to set the parameters for the library at run-time
 
 = Details =
 
