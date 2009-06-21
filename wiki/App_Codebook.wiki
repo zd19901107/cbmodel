@@ -3,5 +3,5 @@
 = Overview =
 This sketch uses the library CbModel for *local video*, it allows you to view the video test and the results obtained from CbModel on the video test. This application also allows you to set the parameters for the library at *run-time*
 
-== What I need to run App_Codebook program? ==
-App_Codebook  is a sketch for <a href="http://processing.org/">Processing</a>,use the Gsmovie library 	
+== What I need to run App_Codebook sketch? ==
+App_Codebook  is a sketch for <a href="http://processing.org/">Processing</a>,use the <a href="http://users.design.ucla.edu/~acolubri/processing/gsvideo/home/advanced.html">GSMovie</a> library to extract frames from video
