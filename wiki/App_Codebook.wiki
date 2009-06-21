@@ -22,3 +22,11 @@ After the initialization parameters necessary fields to the library just click o
 	
 Initially being in the process of "learning" is only shown the video and each frame is passed to CbModel to create the model.<br>
 Recently the number of frames to create the model (parameter frames), the library passes in the "Testing" and the sketch shows both the video (left) and <br>difference images created by CbModel (on right)
+
+== Installation ==
+=== STEP ONE: Unpack CbModel ===
+Extract the compressed file in a part of the system and copy it in the folder libraries of your Processing sketchbook
+
+=== Step TWO: Using the library ===
+After starting <a href="http://processing.org/">Processing</a>, go to menu File-> Sketchbook
+and select the library CbModel
