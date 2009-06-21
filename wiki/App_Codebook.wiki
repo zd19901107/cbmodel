@@ -16,10 +16,9 @@ Launched Sketch, is a fairly intuitive form, the lower are the *inputBox* to set
     * frames - number of frames to create the model
     * epsilon_2 - max tollerance of brightenns's deviation and the color of a pixel(in order too recognise a pixel from another) phase's "Testing"(you can change at runtime)
 (mandatory parameter)
-    * video - path the local video (must be set last)
+    * video - name of the local video  (*the video must be in the subfolder "video" in the sketch*)
   
 After the initialization parameters necessary fields to the library just click on run (green arrow).<br>
 	
 Initially being in the process of "learning" is only shown the video and each frame is passed to CbModel to create the model.<br>
 Recently the number of frames to create the model (parameter frames), the library passes in the "Testing" and the sketch shows both the video (left) and <br>difference images created by CbModel (on right)
-cerca 
