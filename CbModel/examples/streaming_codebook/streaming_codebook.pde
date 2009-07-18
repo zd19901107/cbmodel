@@ -1,5 +1,4 @@
 /**
-  *@author Mattia Masoni
   *@author Federico Bartoli
   *
   *This sketch uses the library CbModel for internet video stream,
@@ -66,10 +65,10 @@ void setup(){
   background(0);
 
   frameDisplayed = -1;
-  alfa = 0.2;
-  beta = 1.4;
-  e1 = 1000;
-  e2 = 1000;
+  alfa = 0.4;
+  beta = 1.2;
+  e1 = 0.2;
+  e2 = 50;
   tm = 0.9;
 
   first=true;
@@ -179,10 +178,6 @@ void draw(){
   stroke(0);  
   textFont(font, 15);
   
-    
- /* ##############################################  */   
- /* ##############################################  */
- /* ##############################################  */
  
   if(frameDisplayed >= 0)
   {
@@ -190,8 +185,7 @@ void draw(){
     {  
       if(next_img!=null) 
       {             
-
-        image(next_img, 10, 50,384,288);
+        image(next_img, 10, 50,380,280);
 
         fill(0);
         rect(395, 12, 70, 30);
@@ -232,7 +226,7 @@ void draw(){
       {
         if(next_img!=null) 
         {             
-          image(next_img, 10, 50,384,288);      
+          image(next_img, 10, 50,380,280);      
           
           fill(0);
           rect(395, 12, 120, 30);
@@ -244,7 +238,7 @@ void draw(){
           ellipseMode(CENTER);
           ellipse(380, 27, 20, 20); 
           try{
-            image(Model.getDifferenceImage(next_img), 456, 50,384,288);
+            image(Model.getDifferenceImage(next_img), 456, 50,380,280);
           }
           catch(WrongSizeException Err){
             println("Dimension of input's image not equal to the size set in the model");
@@ -289,38 +283,18 @@ void mouseClicked()
     }
     else if( frameDisplayed < 0 ){
       frameDisplayed = 0;    
-      if( i == 0)
-      {
-        path.toLowerCase();
-        if(path.equals("bologna"))
-          index=0;                 
-        if(path.equals("citta1"))
-          index=1;                 
-        if(path.equals("citta2"))
-          index=2;                 
-        else
-          index=0;                 
-                  
-        myMovie= new CaptureMJPEG(this,new AxisURL(servers[index]).setResolution(width, height).setDesiredFPS(5).getURL());
-        myMovie.startCapture();
-      }
-      else{
-        path = str(inputChar[0]);
-        for(int j=1; j<i; j++)
-        path = path + str(inputChar[j]);
-        path.toLowerCase();
-        if(path.equals("bologna"))
-          index=0;                 
-        if(path.equals("citta1"))
-          index=1;                 
-        if(path.equals("citta2"))
-          index=2;                 
-        else
-          index=0;                 
-                
-        myMovie= new CaptureMJPEG(this,new AxisURL(servers[index]).setResolution(width, height).setDesiredFPS(5).getURL());
-        myMovie.startCapture();
-      } 
+      path.toLowerCase();
+      if(path.equals("bologna"))
+        index=0;                 
+      else if(path.equals("citta1"))
+        index=1;                 
+      else if(path.equals("citta2"))
+        index=2;                 
+      else
+        index=0;                 
+      
+      myMovie= new CaptureMJPEG(this,new AxisURL(servers[index]).setResolution(width, height).setDesiredFPS(5).getURL());
+      myMovie.startCapture();
     
       fill(0);
       rect(405, 500, 40, 40);
@@ -384,16 +358,16 @@ void mouseClicked()
   }
     
     
-  if( mouseX_path == true && mouseY_path == true )
+  if( mouseX_path == true && mouseY_path == true && !isPlaying)
   {
     avoid_writing_path = true;
     fill(255);
     stroke(255, 0, 0);
     rect(430, 382, 100, 20);  
     
-   } 
-   else
-   {
+  } 
+  else
+  {
      avoid_writing_path = false;
      fill(255);
      stroke(0);
@@ -517,7 +491,11 @@ void keyPressed()
         rect(435+i*10, 385, 10, 15);          
       }
     } 
-    else if(int(key)==10);
+    else if(int(key)==10){
+      path=new String();
+      for(int j=0; j<i; j++)
+        path = path + str(inputChar[j]);
+    }
     else{
       inputChar[i] = key;
       text( inputChar[i], 435+i*10, 397);
