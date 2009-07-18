@@ -24,7 +24,7 @@ public class CbModel extends Thread{
 	private int 	width;
 	private int 	height;
 	private int 	n_frame;
-	private boolean learn_state;
+    private boolean learn_state;
 	private boolean end_learn;
 	private boolean active_process;
 	private boolean wait_process;
@@ -58,7 +58,7 @@ public class CbModel extends Thread{
 		for(int i=0;i<3;i++){
 			norm_squared_xt+=xt[i]*xt[i];
 			norm_squared_vm+=vm[i]*vm[i];
-			scalar_squared=xt[i]*vm[i];
+			scalar_squared+=xt[i]*vm[i];
 		}
 		scalar_squared=scalar_squared * scalar_squared;
 		p_squared=scalar_squared/norm_squared_vm;
@@ -77,6 +77,7 @@ public class CbModel extends Thread{
 		
 		if( (brightness_hi=beta*brightness_sup_vm) >brightness_inf_vm/alpha)
 			brightness_hi=brightness_inf_vm/alpha;
+		
 		if( (brightness_low<= norm_xt) && (norm_xt <=brightness_hi))
 			return true;
 		else
@@ -131,29 +132,27 @@ public class CbModel extends Thread{
 			aux[2]=1;
 			aux[3]=n_frame-1;
 			aux[4]=aux[5]=n_frame;
+			
 			Cb[cord_x][cord_y].add(xt,aux);
 		}
 		else{
-			xt[0]=(Cb[cord_x][cord_y].get(index).aux[2]*Cb[cord_x][cord_y].get(index).vm[0]+xt[0])/(Cb[cord_x][cord_y].get(index).aux[2]+1);	
-			xt[1]=(Cb[cord_x][cord_y].get(index).aux[2]*Cb[cord_x][cord_y].get(index).vm[1]+xt[1])/(Cb[cord_x][cord_y].get(index).aux[2]+1);
-	    	xt[2]=(Cb[cord_x][cord_y].get(index).aux[2]*Cb[cord_x][cord_y].get(index).vm[2]+xt[2])/(Cb[cord_x][cord_y].get(index).aux[2]+1);
+			Cb[cord_x][cord_y].get(index).vm[0]=(Cb[cord_x][cord_y].get(index).aux[2]*Cb[cord_x][cord_y].get(index).vm[0]+xt[0])/(Cb[cord_x][cord_y].get(index).aux[2]+1);	
+			Cb[cord_x][cord_y].get(index).vm[1]=(Cb[cord_x][cord_y].get(index).aux[2]*Cb[cord_x][cord_y].get(index).vm[1]+xt[1])/(Cb[cord_x][cord_y].get(index).aux[2]+1);
+			Cb[cord_x][cord_y].get(index).vm[2]=(Cb[cord_x][cord_y].get(index).aux[2]*Cb[cord_x][cord_y].get(index).vm[2]+xt[2])/(Cb[cord_x][cord_y].get(index).aux[2]+1);
 	    	
-	    	if((aux[0]=Cb[cord_x][cord_y].get(index).aux[0])>brightness_xt)
-	    		aux[0]=brightness_xt;
+	    	if(Cb[cord_x][cord_y].get(index).aux[0]>brightness_xt)
+	    		Cb[cord_x][cord_y].get(index).aux[0]=brightness_xt;
 			
-	    	if((aux[1]=Cb[cord_x][cord_y].get(index).aux[1])<brightness_xt)
-	    		aux[1]=brightness_xt;
+	    	if(Cb[cord_x][cord_y].get(index).aux[1]<brightness_xt)
+	    		Cb[cord_x][cord_y].get(index).aux[1]=brightness_xt;
 
-	    	aux[2]=Cb[cord_x][cord_y].get(index).aux[2]+1;
+	    	Cb[cord_x][cord_y].get(index).aux[2]=Cb[cord_x][cord_y].get(index).aux[2]+1;
 
-	    	if((aux[3]=n_frame-Cb[cord_x][cord_y].get(index).aux[5])<Cb[cord_x][cord_y].get(index).aux[3])
-	    		aux[3]=Cb[cord_x][cord_y].get(index).aux[3];
+	    	if(Cb[cord_x][cord_y].get(index).aux[3]<=n_frame-Cb[cord_x][cord_y].get(index).aux[5])
+	    		Cb[cord_x][cord_y].get(index).aux[3]=n_frame-Cb[cord_x][cord_y].get(index).aux[5];
 	    	
-	    	aux[4]=Cb[cord_x][cord_y].get(index).aux[4];
-	    	aux[5]=n_frame;	    	
-	    	
-	    	Cb[cord_x][cord_y].update(index,xt, aux);
-	    	}
+	    	Cb[cord_x][cord_y].get(index).aux[5]=n_frame;	    	
+		}
 			
 	}
 	private void passTestState_(){
@@ -193,7 +192,6 @@ public class CbModel extends Thread{
 	}
     private void updateModel_(PImage Image)throws LearningStateException,WrongSizeException{
 
-		Image.loadPixels();
 		n_frame+=1;
 		for(int x=0;x<width;x++){
 			for(int y=0;y<height;y++){
@@ -213,7 +211,7 @@ public class CbModel extends Thread{
     public CbModel(PApplet theParent,int width,int height) {
 		
     	myParent = theParent;
-		resetModel(width,height,0.2f,1.4f,1000f,1000f,0.9f,0,0xffffffff);
+		resetModel(width,height,0.4f,1.2f,0.2f,100f,0.9f,0,0xffffffff);
 			
 	}
 	/**
@@ -221,8 +219,8 @@ public class CbModel extends Thread{
 	 * @param theParent pointer to the caller.
 	 * @param width video's width.
 	 * @param height video's height.
-	 * @param alpha brightness'parameter ,between 0.2-0.7 .
-	 * @param beta brightness'parameter,tipically between 1.1-1.8 .
+	 * @param alpha brightness'parameter ,between 0.4-0.7 .
+	 * @param beta brightness'parameter,tipically between 1.1-1.5 .
 	 * @param epsilon_1 max tollerance of brightenns's deviation and the color of a pixel(in order too recognise a pixel from another) phase's "Learning".
 	 * @param epsilon_2 max tollerance of brightenns's deviation and the color of a pixel(in order too recognise a pixel from another) phase's "Testing".
 	 * @param percent_tm temporal threshold's parameter,tipically is  0.7.
@@ -390,8 +388,10 @@ public class CbModel extends Thread{
 	 * @param epsilon a new max threshold of brightenns's deviation and the color of a pixel.
 	 */
     public void setEpsilon2(float epsilon){
-		this.epsilon[1]=epsilon;
-	}
+	
+    	this.epsilon[1]=epsilon;
+	
+    }
 	/**
 	 * 	The mand of status changement from "Learning" to "Testing",obviously this transit should not be immediate,this depend from 
 	 *   thrend execution.
