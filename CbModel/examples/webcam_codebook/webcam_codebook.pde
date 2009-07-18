@@ -1,5 +1,4 @@
 /**
-  *@author Mattia Masoni
   *@author Federico Bartoli
   *
   *This sketch uses the library CbModel for video stream of the webcam, 
@@ -55,10 +54,10 @@ void setup()
   
   frameDisplayed = -1;
 
-  alfa = 0.2;
-  beta = 1.4;
-  e1 = 1000;
-  e2 = 1000;
+  alfa = 0.4;
+  beta = 1.2;
+  e1 = 0.2;
+  e2 = 50;
   tm = 0.9;
   
   mouseX_play = false;
@@ -174,7 +173,7 @@ void draw()
   if(frameDisplayed >= 0){
     if(frameDisplayed <= frames){  
       WebCam= loadImage("/data/webcam/" + path);
-      image(WebCam, 10, 50,384,288);
+        image(WebCam, 10, 50,380,280);
       fill(255); 
       text("Learning", 400, 32);
       fill(255, 0, 0);
@@ -199,7 +198,7 @@ void draw()
       if( Model.isTestState()){
         rect(395, 12, 120, 30);
         WebCam= loadImage("/data/webcam/" + path);
-        image(WebCam, 10, 50,384,288);      
+        image(WebCam, 10, 50,380,280);      
         fill(255); 
         text("Testing", 400, 32);
         fill(0, 255, 0);
@@ -207,7 +206,7 @@ void draw()
         ellipseMode(CENTER);
         ellipse(380, 27, 20, 20); 
         try{
-          image(Model.getDifferenceImage(WebCam), 456, 50,384,288);
+          image(Model.getDifferenceImage(WebCam), 456, 50,380,280);
         }
         catch(WrongSizeException Err){
           println("Dimension of input's image not equal to the size set in the model...");
@@ -241,51 +240,45 @@ void mouseClicked(){
     }
     else if( frameDisplayed < 0 ){
       frameDisplayed = 0;    
-      if( i == 0)
-        WebCam= loadImage("data/webcam/" + path);
-       else{
-         path = str(inputChar[0]);
-         for(int j=1; j<i; j++)
-          path = path + str(inputChar[j]);
-         WebCam = loadImage("data/webcam/" + path);         
-       } 
-       fill(0);
-       rect(405, 500, 40, 40);
-       image(img_stop, 574, 500); 
-       Model = new CbModel(this, WebCam.width,WebCam.height,alfa, beta, e1, e2, tm, 0, 0xFFFFFFFF);
+      WebCam = loadImage("data/webcam/" + path);         
+       
+      fill(0);
+      rect(405, 500, 40, 40);
+      image(img_stop, 574, 500); 
+      Model = new CbModel(this, WebCam.width,WebCam.height,alfa, beta, e1, e2, tm, 0, 0xFFFFFFFF);
 
-       fill(0);
-       rect(95,390,100,20);
-       fill(255);
-       text("alpha          "+alfa, 30, 405);
+      fill(0);
+      rect(95,390,100,20);
+      fill(255);
+      text("alpha          "+alfa, 30, 405);
 
-       fill(0);
-       rect(95,420,100,20);
-       fill(255);
-       text("beta            "+beta, 30, 435);
+      fill(0);
+      rect(95,420,100,20);
+      fill(255);
+      text("beta            "+beta, 30, 435);
 
-       fill(0);
-       rect(95,450,100,20);
-       fill(255);
-       text("tm                "+tm, 30, 465);
+      fill(0);
+      rect(95,450,100,20);
+      fill(255);
+      text("tm                "+tm, 30, 465);
 
-       fill(0);
-       rect(95,480,100,20);
-       fill(255);
-       text("epsilon 1    "+e1, 30, 495);
+      fill(0);
+      rect(95,480,100,20);
+      fill(255);
+      text("epsilon 1    "+e1, 30, 495);
 
-       fill(0);
-       rect(95,510,100,20);
-       fill(255);
-       text("frames        "+frames, 30, 525);
+      fill(0);
+      rect(95,510,100,20);
+      fill(255);
+      text("frames        "+frames, 30, 525);
 
-       fill(0);
-       rect(95,540,100,20);
-       fill(255);
-       text("epsilon 2     "+e2, 30, 555);
+      fill(0);
+      rect(95,540,100,20);
+      fill(255);
+      text("epsilon 2     "+e2, 30, 555);
 
-       fill(255);
-       isPlaying = true;
+      fill(255);
+      isPlaying = true;
   
     }
   }
@@ -309,7 +302,7 @@ void mouseClicked(){
   }
     
     
-  if( mouseX_path == true && mouseY_path == true){
+  if( mouseX_path == true && mouseY_path == true && !isPlaying){
     avoid_writing_path = true;
     fill(255);
     stroke(255, 0, 0);
@@ -439,7 +432,11 @@ void keyPressed()
         rect(435+i*10, 385, 10, 15);          
       }
     } 
-    else if(int(key)==10);
+    else if(int(key)==10){
+      path=new String();
+      for(int j=0; j<i; j++)
+        path = path + str(inputChar[j]);
+    }
     else{
       inputChar[i] = key;
       text( inputChar[i], 435+i*10, 397);
