@@ -1,3 +1,0 @@
-#summary Documentation and Technical details.
-
-=*Page under development...*=
