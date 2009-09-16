@@ -5,7 +5,7 @@ This sketch uses the library CbModel for *video stream of the webcam*, it allows
 
 == What I need to run Webcam_Codebook sketch? ==
 Webcam_Codebook  is a sketch  for <a href="http://processing.org/">Processing</a>
-<br>*You need a separate program* to take the stream from the webcam and save it as an image
+<br>*You need a separate program* to take the stream from the webcam and save it as an image in the subfolder "video" in the sketch
 == How to use ==
 Launched Sketch, is a fairly intuitive form, the lower are the *inputBox* to set the parameters:<br>
 (if not included are set by default)
@@ -16,7 +16,7 @@ Launched Sketch, is a fairly intuitive form, the lower are the *inputBox* to set
     * frames - number of frames to create the model
     * epsilon_2 - max tollerance of brightenns's deviation and the color of a pixel(in order too recognise a pixel from another) phase's "Testing"(you can *change at runtime*)
 (mandatory parameter)
-    * video - image product by webcam(the video *must be in the subfolder "video"* in the sketch)
+    * video - name of image product by webcam program(the image *must be in the subfolder "video"* in the sketch)
   
 After the initialization parameters necessary fields to the library just click on run (green arrow).<br>
 	
