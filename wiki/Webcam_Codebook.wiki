@@ -1,11 +1,11 @@
 #summary use the CbModel library for video stream of the webcam
 
 = Overview =
-This sketch uses the library CbModel for *video stream of the webcam*, it allows you to view the video test and the results obtained from CbModel on the video test.<br>This application also allows you to set the parameters for the library at *run-time*
+This sketch uses the library CbModel for *video stream of the webcam*, it allows you to view the video test and the results obtained from CbModel on the video test<br>This application also allows you to set the parameters for the library at *run-time*
 
 == What I need to run Webcam_Codebook sketch? ==
 Webcam_Codebook  is a sketch  for <a href="http://processing.org/">Processing</a>
-
+<br>You need a separate program to take the stream from the webcam and save it as an image
 == How to use ==
 Launched Sketch, is a fairly intuitive form, the lower are the *inputBox* to set the parameters:<br>
 (if not included are set by default)
